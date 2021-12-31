@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: nouchka/sqlite3:latest
+    volumes:
+      - masterclass-db-data:/root/db
+    stdin_open: true
+    tty: true
+
+  backend:
+    build:
+      context: ./MasterClassBackEnd
+      dockerfile: Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && ((rake db:migrate && rake db:seed) || rake db:setup) && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/masterclass-backend-data/app/storage
+    tmpfs: /masterclass-backend-data/tmp
+    depends_on:
+      - db
+    env_file: ./MasterClassBackEnd/.env
+    tty: true
+    stdin_open: true
+    ports:
+      - "3000:3000"
+  forntend:
+    container_name: masterclass-forntend
+    build:
+      context: ./MasterClassFrontEnd
+      dockerfile: Dockerfile
+      args:
+        BACKEND_ROUTE: http://localhost:3000/
+    expose:
+      - '8080'
+    ports:
+        - '8080:8080'
+    depends_on:
+      - backend
+    links:
+      - backend
+
+volumes:
+  masterclass-backend-data:
+  masterclass-db-data:
+
