@@ -1,6 +1,6 @@
-[submodule "Learning-Management-System-BackEnd"]
-	path = Learning-Management-System-BackEnd
-	url = https://github.com/MuhammeedAlaa/Learning-Management-System-BackEnd
-[submodule "MasterClass"]
-	path = MasterClass
-	url = https://github.com/hossamalaa69/MasterClass
+[submodule "MasterClassBackEnd"]
+	path = MasterClassBackEnd
+	url = https://github.com/MuhammeedAlaa/MasterClassBackEnd
+[submodule "MasterClassFrontEnd"]
+	path = MasterClassFrontEnd
+	url = https://github.com/hossamalaa69/MasterClassFrontEnd
