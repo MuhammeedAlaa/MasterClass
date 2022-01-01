@@ -3,7 +3,7 @@
 This is master class learning manegement system.
 
 ## Cloning
-- `git clone --recurse-submodules -j8 git@github.com:MuhammeedAlaa/MasterClass.git`
+- `git clone --recurse-submodules https://github.com/MuhammeedAlaa/MasterClass`
 ## Requierments
 
 - you must have the .env file in the MasterClassBackEnd directory.
