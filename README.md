@@ -2,8 +2,8 @@
 
 This is master class learning manegement system.
 
-## cloning
-- git clone --recurse-submodules -j8 git@github.com:MuhammeedAlaa/MasterClass.git
+## Cloning
+- `git clone --recurse-submodules -j8 git@github.com:MuhammeedAlaa/MasterClass.git`
 ## Requierments
 
 - you must have the .env file in the MasterClassBackEnd directory.
